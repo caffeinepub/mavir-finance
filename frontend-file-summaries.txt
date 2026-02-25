@@ -1,0 +1,13 @@
+{
+  "frontend/src/pages/AdminPage.tsx": "Admin dashboard with auth guard using useAuth hook — redirects unauthenticated users to /login, shows current user name, and adds a Logout button that clears auth state and redirects to /login.",
+  "frontend/index.html": "HTML entry point with updated browser tab title changed from \"Mavir Finance\" to \"Mahveer Finance\".",
+  "frontend/src/hooks/useAuth.ts": "New client-side authentication hook providing login, register, logout, isAuthenticated, and getCurrentUser functions using localStorage/sessionStorage with a simple hash for password storage.",
+  "frontend/src/pages/LoginPage.tsx": "New Login page with email, password, Remember Me checkbox, and Login button; uses useAuth hook to validate credentials and redirect to /admin on success, styled with navy/gold finance theme.",
+  "frontend/src/pages/RegisterPage.tsx": "New Registration page with Full Name, Email, Phone Number, Password, Confirm Password fields and Register button; uses useAuth hook to save user to localStorage and redirect to /login on success, styled consistently with LoginPage.",
+  "frontend/src/components/Header.tsx": "Sticky navigation header rebranded to \"Mahveer Finance\" with Login and Register links added to both desktop nav and mobile collapsible menu, including active state highlighting.",
+  "frontend/src/components/Footer.tsx": "Footer rebranded to \"Mahveer Finance\" with Caffeine.ai attribution removed; retains all other content including nav links, loan products list, and contact information.",
+  "frontend/src/pages/LandingPage.tsx": "Landing page with all \"Mavir Finance\" references updated to \"Mahveer Finance\" in the hero description and \"Why Choose Us\" section heading.",
+  "frontend/src/App.tsx": "Main app with TanStack Router updated to include /login and /register routes alongside existing routes, all rendered within the shared Header/Footer layout.",
+  "frontend/src/index.css": "Global styles with OKLCH color system, navy/gold design tokens, and added --auth-bg CSS variable and .bg-auth-bg utility for the login/register page backgrounds.",
+  "frontend/tailwind.config.js": "Tailwind configuration with navy/gold color tokens, Playfair Display display font, Inter sans font, and custom shadow utilities for the finance theme."
+}

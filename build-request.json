@@ -1,0 +1,159 @@
+{
+  "kind": "build_request",
+  "title": "Rebrand to Mahveer Finance, remove Caffeine footer, add Login/Register pages with auth flow",
+  "projectName": "Mahveer Finance",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Replace every occurrence of 'Mavir Finance' with 'Mahveer Finance' across all frontend files, including the HTML title, Header logo text, Footer brand name, Landing page copy, and any page headings or metadata.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Change all references from \"Mavir Finance\" to \"Mahveer Finance\"."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The string 'Mavir Finance' does not appear anywhere in the rendered UI or source files.",
+        "The browser tab title reads 'Mahveer Finance'.",
+        "The Header logo displays 'Mahveer Finance'.",
+        "The Footer brand name displays 'Mahveer Finance'.",
+        "The Landing page hero and all headings reference 'Mahveer Finance'."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Remove the Caffeine.ai attribution line from the Footer component (frontend/src/components/Footer.tsx). No other footer content should be removed.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Remove any footer text or branding mentioning Caffeine."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The rendered footer contains no text or links referencing 'Caffeine', 'caffeine.ai', or any Caffeine branding.",
+        "All other footer content (brand name, nav links, contact info) remains intact."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a Login page at route '/login' with: an Email input field, a Password input field, a 'Remember Me' checkbox, and a 'Login' button. Style it with a modern professional finance aesthetic consistent with the existing navy/gold palette.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Add a Login page with: Email, Password, Remember Me checkbox, Login button"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigating to '/login' renders the Login page.",
+        "The page contains an email input, password input, 'Remember Me' checkbox, and a 'Login' button.",
+        "All form fields are correctly labeled and accessible.",
+        "The page uses the navy/gold finance design theme."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a Registration page at route '/register' with: a Full Name input, an Email input, a Phone Number input, a Password input, a Confirm Password input, and a 'Register' button. Style it consistently with the Login page and finance UI theme.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Add a Registration page with: Full Name, Email, Phone Number, Password, Confirm Password, Register button"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigating to '/register' renders the Registration page.",
+        "The page contains Full Name, Email, Phone Number, Password, Confirm Password inputs, and a 'Register' button.",
+        "All form fields are correctly labeled and accessible.",
+        "The page uses the navy/gold finance design theme consistent with the Login page."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add 'Login' and 'Register' navigation links to the Header component (frontend/src/components/Header.tsx) in both the desktop nav and the collapsible mobile menu. These links should navigate to '/login' and '/register' respectively.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Add navigation links for Login and Register in the header."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The desktop header displays 'Login' and 'Register' links.",
+        "The mobile collapsible menu also includes 'Login' and 'Register' links.",
+        "Clicking 'Login' navigates to '/login'; clicking 'Register' navigates to '/register'.",
+        "Active state highlighting applies to these links consistent with existing nav link styles."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement a basic client-side authentication flow using localStorage. On successful login (validate credentials against stored user data), set an auth flag in localStorage and redirect to '/admin'. On the Registration page, save the user's credentials to localStorage and redirect to '/login'. Protect the '/admin' route so unauthenticated users are redirected to '/login'. Add a logout option in the Admin Dashboard that clears the auth flag and redirects to '/login'.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Create basic authentication flow and redirect to Admin Dashboard after login."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Submitting valid credentials on the Login page sets an auth token in localStorage and redirects to '/admin'.",
+        "Submitting the Registration form saves user data to localStorage and redirects to '/login'.",
+        "Accessing '/admin' without being authenticated redirects the user to '/login'.",
+        "A logout action clears the auth flag from localStorage and redirects to '/login'.",
+        "The 'Remember Me' checkbox on the Login page persists the auth session across browser restarts when checked."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Register the '/login' and '/register' routes in the TanStack Router configuration in frontend/src/App.tsx, rendering the new LoginPage and RegisterPage components respectively.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Add a Login page",
+          "Add a Registration page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The router recognises '/login' and '/register' as valid routes.",
+        "Both pages render within the shared Header/Footer layout.",
+        "No 404 or routing error occurs when navigating to these routes."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any file under frontend/src/hooks/ (immutable paths).",
+    "Do not modify frontend/src/components/ui/ (immutable paths).",
+    "Do not modify frontend/src/main.tsx (immutable path).",
+    "Authentication must be client-side only using localStorage; do not add backend authentication endpoints.",
+    "Preserve all existing routes and functionality (home, calculators, apply, portal, admin)."
+  ],
+  "nonGoals": [
+    "Internet Identity or any external authentication provider integration.",
+    "Backend user storage or authentication logic in Motoko.",
+    "Email verification or password reset flows.",
+    "Any changes to existing page content beyond the branding rename.",
+    "Deployment configuration changes."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

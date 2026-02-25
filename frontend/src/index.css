@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Navy palette */
+    --navy: oklch(0.22 0.06 255);
+    --navy-light: oklch(0.30 0.07 255);
+    --navy-dark: oklch(0.16 0.05 255);
+
+    /* Gold palette */
+    --gold: oklch(0.75 0.14 75);
+    --gold-light: oklch(0.82 0.13 75);
+    --gold-dark: oklch(0.65 0.14 75);
+
+    /* Semantic tokens */
+    --background: oklch(0.98 0.005 240);
+    --foreground: oklch(0.18 0.04 255);
+
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.18 0.04 255);
+
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.18 0.04 255);
+
+    --primary: oklch(0.22 0.06 255);
+    --primary-foreground: oklch(0.98 0 0);
+
+    --secondary: oklch(0.95 0.01 240);
+    --secondary-foreground: oklch(0.22 0.06 255);
+
+    --muted: oklch(0.95 0.01 240);
+    --muted-foreground: oklch(0.52 0.03 240);
+
+    --accent: oklch(0.75 0.14 75);
+    --accent-foreground: oklch(0.22 0.06 255);
+
+    --destructive: oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(0.98 0 0);
+
+    --border: oklch(0.88 0.01 240);
+    --input: oklch(0.88 0.01 240);
+    --ring: oklch(0.75 0.14 75);
+
+    --radius: 0.5rem;
+
+    /* Auth page background */
+    --auth-bg: oklch(0.96 0.015 240);
+  }
+
+  .dark {
+    --background: oklch(0.14 0.04 255);
+    --foreground: oklch(0.95 0.01 240);
+
+    --card: oklch(0.18 0.05 255);
+    --card-foreground: oklch(0.95 0.01 240);
+
+    --popover: oklch(0.18 0.05 255);
+    --popover-foreground: oklch(0.95 0.01 240);
+
+    --primary: oklch(0.75 0.14 75);
+    --primary-foreground: oklch(0.18 0.04 255);
+
+    --secondary: oklch(0.22 0.05 255);
+    --secondary-foreground: oklch(0.95 0.01 240);
+
+    --muted: oklch(0.22 0.05 255);
+    --muted-foreground: oklch(0.65 0.03 240);
+
+    --accent: oklch(0.75 0.14 75);
+    --accent-foreground: oklch(0.18 0.04 255);
+
+    --destructive: oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(0.98 0 0);
+
+    --border: oklch(0.28 0.04 255);
+    --input: oklch(0.28 0.04 255);
+    --ring: oklch(0.75 0.14 75);
+
+    --auth-bg: oklch(0.16 0.05 255);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: linear-gradient(135deg, oklch(0.16 0.05 255) 0%, oklch(0.22 0.06 255) 60%, oklch(0.26 0.07 255) 100%);
+  }
+
+  .navy-gradient {
+    background: linear-gradient(135deg, oklch(0.16 0.05 255) 0%, oklch(0.22 0.06 255) 100%);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, oklch(0.65 0.14 75) 0%, oklch(0.75 0.14 75) 100%);
+  }
+
+  .bg-auth-bg {
+    background-color: var(--auth-bg);
+  }
+
+  .shadow-card {
+    box-shadow: 0 1px 3px oklch(0.22 0.06 255 / 0.08), 0 4px 12px oklch(0.22 0.06 255 / 0.06);
+  }
+
+  .shadow-gold {
+    box-shadow: 0 4px 14px oklch(0.75 0.14 75 / 0.35);
+  }
+
+  .shadow-navy {
+    box-shadow: 0 2px 8px oklch(0.16 0.05 255 / 0.4);
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card;
+  }
+}

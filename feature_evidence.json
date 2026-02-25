@@ -1,0 +1,139 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-replace-every-occurrence-of-mavir-finance-with-mahveer-finance-across-all-frontend-files-including-the-html-title-header-logo-text-footer-brand-name-landing-page-copy-and-any-page-headings-or-metadata",
+      "featureTitle": "Replace every occurrence of 'Mavir Finance' with 'Mahveer Finance' across all frontend files, including the HTML title, Header logo text, Footer brand name, Landing page copy, and any page headings or metadata.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/pages/AdminPage.tsx",
+        "frontend/src/pages/LandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-remove-the-caffeine-ai-attribution-line-from-the-footer-component-frontend-src-components-footer-tsx-no-other-footer-content-should-be-removed",
+      "featureTitle": "Remove the Caffeine.ai attribution line from the Footer component (frontend/src/components/Footer.tsx). No other footer content should be removed.",
+      "files": [
+        "frontend/src/components/Footer.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-login-page-at-route-login-with-an-email-input-field-a-password-input-field-a-remember-me-checkbox-and-a-login-button-style-it-with-a-modern-professional-finance-aesthetic-consistent-with-the-existing-navy-gold-palette",
+      "featureTitle": "Create a Login page at route '/login' with: an Email input field, a Password input field, a 'Remember Me' checkbox, and a 'Login' button. Style it with a modern professional finance aesthetic consistent with the existing navy/gold palette.",
+      "files": [
+        "frontend/src/pages/LoginPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-registration-page-at-route-register-with-a-full-name-input-an-email-input-a-phone-number-input-a-password-input-a-confirm-password-input-and-a-register-button-style-it-consistently-with-the-login-page-and-finance-ui-theme",
+      "featureTitle": "Create a Registration page at route '/register' with: a Full Name input, an Email input, a Phone Number input, a Password input, a Confirm Password input, and a 'Register' button. Style it consistently with the Login page and finance UI theme.",
+      "files": [
+        "frontend/src/pages/RegisterPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-login-and-register-navigation-links-to-the-header-component-frontend-src-components-header-tsx-in-both-the-desktop-nav-and-the-collapsible-mobile-menu-these-links-should-navigate-to-login-and-register-respectively",
+      "featureTitle": "Add 'Login' and 'Register' navigation links to the Header component (frontend/src/components/Header.tsx) in both the desktop nav and the collapsible mobile menu. These links should navigate to '/login' and '/register' respectively.",
+      "files": [
+        "frontend/src/components/Header.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-basic-client-side-authentication-flow-using-localstorage-on-successful-login-validate-credentials-against-stored-user-data-set-an-auth-flag-in-localstorage-and-redirect-to-admin-on-the-registration-page-save-the-user-s-credentials-to-localstorage-and-redirect-to-login-protect-the-admin-route-so-unauthenticated-users-are-redirected-to-login-add-a-logout-option-in-the-admin-dashboard-that-clears-the-auth-flag-and-redirects-to-login",
+      "featureTitle": "Implement a basic client-side authentication flow using localStorage. On successful login (validate credentials against stored user data), set an auth flag in localStorage and redirect to '/admin'. On the Registration page, save the user's credentials to localStorage and redirect to '/login'. Protect the '/admin' route so unauthenticated users are redirected to '/login'. Add a logout option in the Admin Dashboard that clears the auth flag and redirects to '/login'.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useAuth.ts",
+        "frontend/src/pages/AdminPage.tsx",
+        "frontend/src/pages/LoginPage.tsx",
+        "frontend/src/pages/RegisterPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-register-the-login-and-register-routes-in-the-tanstack-router-configuration-in-frontend-src-app-tsx-rendering-the-new-loginpage-and-registerpage-components-respectively",
+      "featureTitle": "Register the '/login' and '/register' routes in the TanStack Router configuration in frontend/src/App.tsx, rendering the new LoginPage and RegisterPage components respectively.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

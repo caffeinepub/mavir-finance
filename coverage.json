@@ -1,0 +1,133 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T11:41:09.866Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 7,
+    "implemented": 7,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Replace every occurrence of 'Mavir Finance' with 'Mahveer Finance' across all frontend files, including the HTML title, Header logo text, Footer brand name, Landing page copy, and any page headings or metadata.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/index.html",
+          "frontend/src/components/Header.tsx",
+          "frontend/src/components/Footer.tsx",
+          "frontend/src/pages/LandingPage.tsx",
+          "frontend/src/pages/AdminPage.tsx",
+          "frontend/src/pages/ApplyPage.tsx",
+          "frontend/src/pages/CalculatorsPage.tsx",
+          "frontend/src/pages/CustomerPortalPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/index.html",
+          "frontend/src/components/Header.tsx",
+          "frontend/src/components/Footer.tsx",
+          "frontend/src/pages/LandingPage.tsx",
+          "frontend/src/pages/AdminPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Remove the Caffeine.ai attribution line from the Footer component (frontend/src/components/Footer.tsx). No other footer content should be removed.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Footer.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Footer.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Create a Login page at route '/login' with: an Email input field, a Password input field, a 'Remember Me' checkbox, and a 'Login' button. Style it with a modern professional finance aesthetic consistent with the existing navy/gold palette.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/LoginPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/LoginPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Create a Registration page at route '/register' with: a Full Name input, an Email input, a Phone Number input, a Password input, a Confirm Password input, and a 'Register' button. Style it consistently with the Login page and finance UI theme.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/RegisterPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/RegisterPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Add 'Login' and 'Register' navigation links to the Header component (frontend/src/components/Header.tsx) in both the desktop nav and the collapsible mobile menu. These links should navigate to '/login' and '/register' respectively.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Header.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Header.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Implement a basic client-side authentication flow using localStorage. On successful login (validate credentials against stored user data), set an auth flag in localStorage and redirect to '/admin'. On the Registration page, save the user's credentials to localStorage and redirect to '/login'. Protect the '/admin' route so unauthenticated users are redirected to '/login'. Add a logout option in the Admin Dashboard that clears the auth flag and redirects to '/login'.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useAuth.ts",
+          "frontend/src/pages/LoginPage.tsx",
+          "frontend/src/pages/RegisterPage.tsx",
+          "frontend/src/pages/AdminPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useAuth.ts",
+          "frontend/src/pages/LoginPage.tsx",
+          "frontend/src/pages/RegisterPage.tsx",
+          "frontend/src/pages/AdminPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Register the '/login' and '/register' routes in the TanStack Router configuration in frontend/src/App.tsx, rendering the new LoginPage and RegisterPage components respectively.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/hooks/useAuth.ts",
+    "frontend/src/index.css",
+    "frontend/src/pages/AdminPage.tsx",
+    "frontend/src/pages/LandingPage.tsx",
+    "frontend/src/pages/LoginPage.tsx",
+    "frontend/src/pages/RegisterPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

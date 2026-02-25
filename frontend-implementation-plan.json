@@ -1,0 +1,180 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Rebrand to Mahveer Finance, remove Caffeine footer, add Login/Register pages with auth flow",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Replace all occurrences of 'Mavir Finance' with 'Mahveer Finance' across frontend",
+      "acceptanceCriteria": [
+        "The string 'Mavir Finance' does not appear anywhere in the rendered UI or source files.",
+        "The browser tab title reads 'Mahveer Finance'.",
+        "The Header logo displays 'Mahveer Finance'.",
+        "The Footer brand name displays 'Mahveer Finance'.",
+        "The Landing page hero and all headings reference 'Mahveer Finance'."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Update the HTML title tag from 'Mavir Finance' to 'Mahveer Finance'."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Replace 'Mavir Finance' with 'Mahveer Finance' in the logo text and any other brand references."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Replace 'Mavir Finance' with 'Mahveer Finance' in the brand name display and all footer text."
+        },
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Replace all instances of 'Mavir Finance' with 'Mahveer Finance' in hero section, headings, and copy throughout the landing page."
+        },
+        {
+          "path": "frontend/src/pages/AdminPage.tsx",
+          "operation": "modify",
+          "description": "Replace 'Mavir Finance' with 'Mahveer Finance' in page headings and any admin dashboard text."
+        },
+        {
+          "path": "frontend/src/pages/ApplyPage.tsx",
+          "operation": "modify",
+          "description": "Replace 'Mavir Finance' with 'Mahveer Finance' in form headings and confirmation messages."
+        },
+        {
+          "path": "frontend/src/pages/CalculatorsPage.tsx",
+          "operation": "modify",
+          "description": "Replace 'Mavir Finance' with 'Mahveer Finance' in page headings and calculator labels."
+        },
+        {
+          "path": "frontend/src/pages/CustomerPortalPage.tsx",
+          "operation": "modify",
+          "description": "Replace 'Mavir Finance' with 'Mahveer Finance' in portal headings and any customer-facing text."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Remove Caffeine.ai attribution from Footer component",
+      "acceptanceCriteria": [
+        "The rendered footer contains no text or links referencing 'Caffeine', 'caffeine.ai', or any Caffeine branding.",
+        "All other footer content (brand name, nav links, contact info) remains intact."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Remove the caffeine.ai attribution line while preserving all other footer content including brand name, navigation links, loan product list, and contact information."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create Login page with email, password, remember me checkbox, and login button",
+      "acceptanceCriteria": [
+        "Navigating to '/login' renders the Login page.",
+        "The page contains an email input, password input, 'Remember Me' checkbox, and a 'Login' button.",
+        "All form fields are correctly labeled and accessible.",
+        "The page uses the navy/gold finance design theme."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/LoginPage.tsx",
+          "operation": "create",
+          "description": "Create a new Login page component with email input (type='email'), password input (type='password'), 'Remember Me' checkbox, and 'Login' button. Style using the navy/gold palette defined in frontend/src/index.css and Tailwind utility classes consistent with existing pages. Use shadcn/ui form components for consistent styling with the rest of the app."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create Registration page with full name, email, phone, password, confirm password, and register button",
+      "acceptanceCriteria": [
+        "Navigating to '/register' renders the Registration page.",
+        "The page contains Full Name, Email, Phone Number, Password, Confirm Password inputs, and a 'Register' button.",
+        "All form fields are correctly labeled and accessible.",
+        "The page uses the navy/gold finance design theme consistent with the Login page."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/RegisterPage.tsx",
+          "operation": "create",
+          "description": "Create a new Registration page component with Full Name (text input), Email (email input), Phone Number (tel input), Password (password input), Confirm Password (password input), and 'Register' button. Style consistently with the Login page using the navy/gold palette and shadcn/ui form components. Include client-side password confirmation validation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add Login and Register navigation links to Header component",
+      "acceptanceCriteria": [
+        "The desktop header displays 'Login' and 'Register' links.",
+        "The mobile collapsible menu also includes 'Login' and 'Register' links.",
+        "Clicking 'Login' navigates to '/login'; clicking 'Register' navigates to '/register'.",
+        "Active state highlighting applies to these links consistent with existing nav link styles."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Add 'Login' and 'Register' navigation links to both the desktop nav section and the mobile collapsible menu. Use the existing Link component pattern with active state highlighting that matches the current nav link styles. Position the links appropriately in the navigation order (typically at the end of the nav list)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Implement client-side authentication flow using localStorage with login, registration, and logout",
+      "acceptanceCriteria": [
+        "Submitting valid credentials on the Login page sets an auth token in localStorage and redirects to '/admin'.",
+        "Submitting the Registration form saves user data to localStorage and redirects to '/login'.",
+        "Accessing '/admin' without being authenticated redirects the user to '/login'.",
+        "A logout action clears the auth flag from localStorage and redirects to '/login'.",
+        "The 'Remember Me' checkbox on the Login page persists the auth session across browser restarts when checked."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useAuth.ts",
+          "operation": "create",
+          "description": "Create a custom React hook providing authentication state management using localStorage. Expose functions for login (validate credentials, set auth token, handle 'Remember Me' persistence), register (save user data), logout (clear auth state), and a check for authentication status. Include utilities for reading/writing user credentials and auth tokens to localStorage."
+        },
+        {
+          "path": "frontend/src/pages/LoginPage.tsx",
+          "operation": "modify",
+          "description": "Import and use the useAuth hook. On form submission, validate the email and password against stored user data in localStorage. If valid, call the login function with the 'Remember Me' checkbox state, then navigate to '/admin' using TanStack Router navigation. Display appropriate error messages for invalid credentials."
+        },
+        {
+          "path": "frontend/src/pages/RegisterPage.tsx",
+          "operation": "modify",
+          "description": "Import and use the useAuth hook. On form submission, validate that passwords match, then call the register function to save user credentials to localStorage. Navigate to '/login' after successful registration with a success message."
+        },
+        {
+          "path": "frontend/src/pages/AdminPage.tsx",
+          "operation": "modify",
+          "description": "Import and use the useAuth hook to check authentication status on component mount. If the user is not authenticated, redirect to '/login' using TanStack Router navigation. Add a logout button in the admin dashboard that calls the logout function and redirects to '/login'."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a route guard or loader to the '/admin' route definition that checks authentication status using the useAuth hook. Redirect unauthenticated users to '/login' before rendering the AdminPage component."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Register /login and /register routes in TanStack Router configuration",
+      "acceptanceCriteria": [
+        "The router recognises '/login' and '/register' as valid routes.",
+        "Both pages render within the shared Header/Footer layout.",
+        "No 404 or routing error occurs when navigating to these routes."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import the new LoginPage and RegisterPage components. Add route definitions for '/login' and '/register' to the TanStack Router configuration alongside the existing routes (home, calculators, apply, portal, admin). Ensure both routes render within the shared Header/Footer layout wrapper consistent with other pages."
+        }
+      ]
+    }
+  ]
+}
